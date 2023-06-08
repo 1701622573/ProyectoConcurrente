@@ -1,0 +1,59 @@
+--------------CONFIGURACION-------------------
+
+Instalación python -> 3.10
+
+Se puede comprobar la versión de python con el siguiente comando en la terminal del sistema:
+
+python --version
+
+Se debera tambien comprobar la version de pip la cual nos ayudara a instalar librerias y extensiones en nuestro entorno de python:
+
+pip --version
+
+ademas tambien se podra actualizar nuestro pip con el comando:
+
+python -m ensurepip --upgrade
+
+Dependiendo de nuestro sistema operativo y configuración se debera utilizar python3 en lugar de python.
+
+--------------INSTALACION DE LIBRERIAS-------------------
+
+Instalacion de librerias
+
+Abrir simbolo de sistema, en modo administrador ó en la terminal de nuestro entorno
+Con el comando : pip install nombre_libreria
+
+se deberan instalar las siguientes librerias para que el algoritmo funcione correctamente:
+pip install numpy "Libreria para manejo de arreglos y matrices en python"
+pip install matplotlib "Libreria para graficar matrices o datos en python"
+pip install biopython "Libreria para el estudio del secuencias de ADN"
+pip install mpi4py "Libreria para el manejo de multiprocesamiento en python"
+pip install tqdm "Libreria para la barra de progreso de la terminal de nuestro entorno"
+pip install numba "Libreria utilizada para el filtrado de imagenes"
+
+
+--------------EJECUCION-------------------
+
+Para la ejecucion del nuestro código, este se hara desde la linea de comandos de nuestro entorno:
+
+En esta podremos tener un comando para ayudarnos con el orden de los datos que debemos agregar a la linea de comandos:
+
+python appDotplot.py --file= --help
+
+Si queremos empezar a ejecutar nuestro código debemos ingresar dos secuencias de ADN que se quieran analizar, cada una de estas en formato FASTA:
+
+python appDotplot.py --file1=Salmonella.fna --file2=E_coli.fna --ps 0.1 --threads 1 2 4 8 --mpi
+
+Se indicara el nombre de nuestra app de creación de dotplots, seguido de las dos secuencias a estudiar llamadas en la linea de comandos como --file, se puede comparar dos distintas o dos iguales,
+luego se podra poner la cantidad de secuencia que queremos analizar empezando con --ps seguido de la cantidad de secuencia 0.5 = 5%,desde un 1% de secuencia hasta el 100% de la secuencia completa,
+luego se podran el número de hilos o procesos que se quieren utilizar y los diferentes numero de veces que queremos ejecutar nuestro código con distinto número --threads seguido del número
+de hilos con que se quiere ejecutar, seguido de un espacio y el siguiente número de hilos o procesos, se recomienda saber la capacidad de nuestra maquina y cual es su número de hilos o núcleos para
+la ejecucion, tambien se añadio un comando de --mpi para la ejecución del código mpi4py de nuestra app de creacion de dotplots.
+
+
+
+--------------RESULTADOS-------------------
+
+Los resultados de nuestr app de creación de dotplots, seran creados por el propio código, generando unas imagenes que se guardaran en la carpeta en la que se ejecuto el código,
+estos resultados cuentan con grafica de tiempo de ejecución, eficacia y aceleracion, y grafica de analisis de algoritmos, tambien se tendra el dotplot de forma completa en una imagen para
+su visualización.
